@@ -1,4 +1,5 @@
 name = "gdwho"
+account_id = "0fbf555a4f1b8aec8740c927578e153f"
 compatibility_date = "2026-04-01"
 type = "javascript"   # or "typescript" if your functions are TS
 
