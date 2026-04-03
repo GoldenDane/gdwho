@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS profiles (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  handle TEXT NOT NULL UNIQUE,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS votes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  profile_id INTEGER NOT NULL,
+  voter_key TEXT NOT NULL,
+  tag TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(profile_id, voter_key),
+  FOREIGN KEY(profile_id) REFERENCES profiles(id)
+);
+
+CREATE TABLE IF NOT EXISTS profile_tag_counts (
+  profile_id INTEGER NOT NULL,
+  tag TEXT NOT NULL,
+  count INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (profile_id, tag),
+  FOREIGN KEY(profile_id) REFERENCES profiles(id)
+);

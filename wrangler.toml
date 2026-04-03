@@ -1,0 +1,8 @@
+name = "gdwho"
+compatibility_date = "2026-04-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gdwho-db"
+database_id = "PASTE_YOUR_DATABASE_ID_HERE"
