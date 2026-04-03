@@ -1,8 +1,14 @@
 name = "gdwho"
 compatibility_date = "2026-04-01"
+type = "javascript"   # or "typescript" if your functions are TS
+
+# Cloudflare Pages build output
 pages_build_output_dir = "dist"
+
+# Worker entry point for your API functions
+main = "functions/index.ts"  # <-- create this file
 
 [[d1_databases]]
 binding = "DB"
 database_name = "gdwho-db"
-database_id = "PASTE_YOUR_DATABASE_ID_HERE"
+database_id = "0fb3cd59-aa90-4801-83d3-5d55d105bdd2"  # <-- replace with actual D1 ID
